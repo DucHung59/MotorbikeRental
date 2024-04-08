@@ -73,12 +73,13 @@ namespace MotorbikeRental
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(91, 69);
+            this.pictureBox2.Location = new System.Drawing.Point(73, 52);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(156, 124);
+            this.pictureBox2.Size = new System.Drawing.Size(192, 134);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // dataGridView1
             // 
@@ -171,9 +172,10 @@ namespace MotorbikeRental
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.Location = new System.Drawing.Point(347, 136);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(511, 28);
+            this.label3.Size = new System.Drawing.Size(274, 28);
             this.label3.TabIndex = 2;
-            this.label3.Text = "“Dịch vụ Cho Thuê Xe Máy – Sự Tự Do Không Giới Hạn”";
+            this.label3.Text = "“Dịch vụ Cho Thuê Xe tự lái \"";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -189,11 +191,11 @@ namespace MotorbikeRental
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(271, 69);
+            this.label1.Location = new System.Drawing.Point(344, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(731, 45);
+            this.label1.Size = new System.Drawing.Size(665, 45);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Chào mừng các bạn đến với Motorbike Rental";
+            this.label1.Text = "Chào mừng đến với Văn Minh Coporation";
             // 
             // trangChu
             // 
