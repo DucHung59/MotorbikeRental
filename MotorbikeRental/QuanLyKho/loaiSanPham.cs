@@ -145,7 +145,7 @@ namespace MotorbikeRental.QuanLyKho
 
         private void dgvLoaiPT_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int r = dgvLoaiPT.CurrentCell.RowIndex;
+            int r = dgvLoaiPT.CurrentRow.Index;
             tbMaPT.Text = dgvLoaiPT.Rows[r].Cells[0].Value.ToString();
             tbLoaiPT.Text = dgvLoaiPT.Rows[r].Cells[1].Value.ToString();
             tbPhanKhoi.Text = dgvLoaiPT.Rows[r].Cells[2].Value.ToString();

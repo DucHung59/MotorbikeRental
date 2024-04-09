@@ -94,6 +94,7 @@ namespace MotorbikeRental.DataAccessLayer
                 }
             }
         }
+        //cmd.CommandText = "insert into tblPhuongTien values (@maPT,@loaiPT,@iPhieuThu,@tenPT,@giaThue,@giaGoc,@anhPT,@tTrang)";
 
         public bool update(string PK_iLoaiPT, string sLoaiPT, string sPhanKhoi)
         {

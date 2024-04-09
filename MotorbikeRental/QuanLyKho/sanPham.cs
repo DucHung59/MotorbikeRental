@@ -118,14 +118,14 @@ namespace MotorbikeRental.QuanLyKho
                 errorProvider.SetError(tbMaPT, "");
             }
 
-            if (cbAnhPT.Text == "")
+            if (tbGiaGoc.Text == "")
             {
                 errorProvider.SetError(tbGiaGoc, MS_001);
                 check = false;
             }
 
             else
-                errorProvider.SetError(cbAnhPT, "");
+                errorProvider.SetError(tbGiaGoc, "");
             ///************/
 
             /************************/

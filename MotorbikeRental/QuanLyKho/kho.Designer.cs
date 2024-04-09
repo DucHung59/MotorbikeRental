@@ -77,7 +77,7 @@ namespace MotorbikeRental.QuanLyKho
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.Location = new System.Drawing.Point(9, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(214, 25);
+            this.label3.Size = new System.Drawing.Size(209, 25);
             this.label3.TabIndex = 6;
             this.label3.Text = "II. Danh sách phiếu thu";
             // 
@@ -91,6 +91,7 @@ namespace MotorbikeRental.QuanLyKho
             this.dgv.RowTemplate.Height = 24;
             this.dgv.Size = new System.Drawing.Size(632, 312);
             this.dgv.TabIndex = 1;
+            this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
             // btnXoa
             // 
@@ -157,7 +158,7 @@ namespace MotorbikeRental.QuanLyKho
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.Location = new System.Drawing.Point(25, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(205, 25);
+            this.label2.Size = new System.Drawing.Size(198, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "I. Thông tin phiếu thu";
             // 
@@ -298,7 +299,7 @@ namespace MotorbikeRental.QuanLyKho
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(435, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 32);
+            this.label1.Size = new System.Drawing.Size(169, 31);
             this.label1.TabIndex = 4;
             this.label1.Text = "QUẢN LÝ KHO";
             // 

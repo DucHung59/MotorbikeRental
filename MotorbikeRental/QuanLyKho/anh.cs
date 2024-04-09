@@ -147,7 +147,7 @@ namespace MotorbikeRental.QuanLyKho
 
         private void dgvAnhPT_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int r = dgvAnhPT.CurrentCell.RowIndex;
+            int r = dgvAnhPT.CurrentRow.Index;
             tbAnh.Text = dgvAnhPT.Rows[r].Cells[0].Value.ToString();
             byte[] b = (byte[])dgvAnhPT.Rows[r].Cells[1].Value;
             pbAnh.Image = ByteArrayToImage(b);

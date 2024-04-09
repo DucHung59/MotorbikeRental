@@ -171,5 +171,14 @@ namespace MotorbikeRental.QuanLyKho
         {
 
         }
+
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int r = dgv.CurrentRow.Index;
+            tbMaPhieuThu.Text = dgv.Rows[r].Cells[0].Value.ToString();
+            tbPT.Text = dgv.Rows[r].Cells[1].Value.ToString();
+            tbSL.Text = dgv.Rows[r].Cells[2].Value.ToString();
+            tbTongTien.Text= dgv.Rows[r].Cells[3].Value.ToString();
+        }
     }
 }
