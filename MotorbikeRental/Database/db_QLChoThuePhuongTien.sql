@@ -414,7 +414,7 @@ GO
 /***************************************/
 /*tblNCC*/
 /*************THÊM NCC*******************/
-CREATE proc sp_ThemNCC
+CREATE or alter proc sp_ThemNCC
 	@NCC int,
 	@PhuongTienN nvarchar(50),
 	@HangSanXuat nvarchar(50),
@@ -642,7 +642,7 @@ as
 GO
 select * from vv_PhieuNhap
 drop view vv_PhieuThu
-alter proc sp_PhieuNhap
+create or alter proc sp_PhieuNhap
 as
 begin
 	SELECT tblPhieuNhap.PK_iPhieuN, tblPhieuNhap.iTTrongTai,tblPhieuNhap.fTongGiaN,tblPhieuNhap.FK_iNCC,
@@ -768,7 +768,33 @@ BEGIN
 
 
 END
+/*Thêm loại phương tiện*/
+create or alter proc sp_ThemLoaiPT
+@iLoaiPT int,
+@sLoaiPT nvarchar(10),
+@sPhanKhoi nvarchar(10)
+as
+begin 
+insert into tblLoaiPhuongTien values (@iLoaiPT,@sLoaiPT,@sPhanKhoi)
+	
+end
 
+/*Sửa loại phương tiện*/
+create or alter proc sp_SuaLoaiPT
+@iLoaiPT int,
+@sLoaiPT nvarchar(10),
+@sPhanKhoi nvarchar(10)
+as
+begin 
+update tblLoaiPhuongTien
+set 
+	PK_iLoaiPT=@iLoaiPT,
+	sLoaiPT=@sLoaiPT,
+	sPhanKhoi=@sPhanKhoi
+where PK_iLoaiPT=@iLoaiPT
+end
+
+/**/
 create view vv_PhuongTien
 as
 	select tblPhuongTien.PK_iPhuongTien,tblPhuongTien.FK_iLoaiPT,tblPhuongTien.FK_iPhieuThu,
@@ -781,9 +807,8 @@ as
 	select *from tblAnhPT	
 	select *from tblPhuongTien	
 	select *from tblCTPhuongTien
-
-
-alter proc sp_ThemPT
+alter table tblCTPhuongTien drop column FK_iDanhGia
+create or alter proc sp_ThemPT
 (
 	 @maPT int,
 	 @loaiPT int,
