@@ -67,7 +67,7 @@ namespace MotorbikeRental
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1440, 999);
+            this.panel1.Size = new System.Drawing.Size(1191, 643);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox2
@@ -205,7 +205,7 @@ namespace MotorbikeRental
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1440, 999);
+            this.ClientSize = new System.Drawing.Size(1191, 643);
             this.Controls.Add(this.panel1);
             this.Name = "trangChu";
             this.Text = "trangChu";

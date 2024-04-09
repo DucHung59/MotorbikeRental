@@ -120,7 +120,6 @@ namespace MotorbikeRental.QuanLyKho
 
             tbNCC.ReadOnly = false;
 
-            loadDataToDataGridView(dgvNCC, nhaCungCapBLL.findAll());
 
         }
 
@@ -130,12 +129,12 @@ namespace MotorbikeRental.QuanLyKho
         private void dgvNCC_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgvNCC.CurrentRow.Index;
-            tbNCC.Text = dgvNCC.Rows[r].Cells[0].Value.ToString();
+            tbNCC.Text         = dgvNCC.Rows[r].Cells[0].Value.ToString();
             tbPhuongTienN.Text = dgvNCC.Rows[r].Cells[1].Value.ToString();
-            tbHangSX.Text = dgvNCC.Rows[r].Cells[2].Value.ToString();
-            tbSL.Text = dgvNCC.Rows[r].Cells[3].Value.ToString();
-            tbTrongTai.Text = dgvNCC.Rows[r].Cells[4].Value.ToString();
-            tbDonGiaN.Text = dgvNCC.Rows[r].Cells[5].Value.ToString();
+            tbHangSX.Text      = dgvNCC.Rows[r].Cells[2].Value.ToString();
+            tbSL.Text          = dgvNCC.Rows[r].Cells[3].Value.ToString();
+            tbTrongTai.Text    = dgvNCC.Rows[r].Cells[4].Value.ToString();
+            tbDonGiaN.Text     = dgvNCC.Rows[r].Cells[5].Value.ToString();
 
             tbNCC.ReadOnly = true;
 

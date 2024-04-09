@@ -45,7 +45,6 @@ namespace MotorbikeRental
             this.tsmiPhieuNhapKho = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDSKH = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiDanhGia = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýNhânSựToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDSNV = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiQuyen = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,7 +78,6 @@ namespace MotorbikeRental
             this.tsmiPhieuNhapKho,
             this.quảnLýKháchHàngToolStripMenuItem,
             this.tsmiDSKH,
-            this.tsmiDanhGia,
             this.quảnLýNhânSựToolStripMenuItem,
             this.tsmiDSNV,
             this.tsmiQuyen,
@@ -210,7 +208,7 @@ namespace MotorbikeRental
             this.tsmiHopDong.Margin = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.tsmiHopDong.Name = "tsmiHopDong";
             this.tsmiHopDong.Size = new System.Drawing.Size(191, 27);
-            this.tsmiHopDong.Text = "Hợp đồng";
+            this.tsmiHopDong.Text = "Hóa đơn";
             this.tsmiHopDong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiHopDong.Click += new System.EventHandler(this.hợpĐồngToolStripMenuItem_Click);
             // 
@@ -267,17 +265,6 @@ namespace MotorbikeRental
             this.tsmiDSKH.Text = "Danh sách khách hàng";
             this.tsmiDSKH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiDSKH.Click += new System.EventHandler(this.danhSáchKháchHàngToolStripMenuItem_Click);
-            // 
-            // tsmiDanhGia
-            // 
-            this.tsmiDanhGia.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiDanhGia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiDanhGia.Margin = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.tsmiDanhGia.Name = "tsmiDanhGia";
-            this.tsmiDanhGia.Size = new System.Drawing.Size(191, 27);
-            this.tsmiDanhGia.Text = "Đánh giá";
-            this.tsmiDanhGia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiDanhGia.Click += new System.EventHandler(this.đánhGiáToolStripMenuItem_Click);
             // 
             // quảnLýNhânSựToolStripMenuItem
             // 
@@ -439,7 +426,6 @@ namespace MotorbikeRental
         private System.Windows.Forms.ToolStripMenuItem tsmiPhieuNhapKho;
         private System.Windows.Forms.ToolStripMenuItem quảnLýKháchHàngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiDSKH;
-        private System.Windows.Forms.ToolStripMenuItem tsmiDanhGia;
         private System.Windows.Forms.ToolStripMenuItem quảnLýNhânSựToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiDSNV;
         private System.Windows.Forms.ToolStripMenuItem tsmiQuyen;

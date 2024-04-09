@@ -236,5 +236,19 @@ namespace MotorbikeRental.QuanLyChoThueXe
         {
             hopDong_Load(null, null);
         }
+
+        private void dgvHopDong_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int r = dgvHopDong.CurrentRow.Index;
+            tbIDHopDong.Text = dgvHopDong.Rows[r].Cells[0].Value.ToString();
+            tbTongTienDatCoc.Text= dgvHopDong.Rows[r].Cells[1].Value.ToString();
+            tbTienThuePt.Text= dgvHopDong.Rows[r].Cells[2].Value.ToString();
+            tbIDPhuongTien.Text=dgvHopDong.Rows[r].Cells[1].Value.ToString();
+            dtpNgayThue.Text=dgvHopDong.Rows[r].Cells[1].Value.ToString();
+            dpNgayHenTra.Text=dgvHopDong.Rows[r].Cells[1].Value.ToString();
+            cbCNMDKH.Text=dgvHopDong.Rows[r].Cells[1].Value.ToString();
+            cbCMNDNV.Text=dgvHopDong.Rows[r].Cells[1].Value.ToString();
+            txtPhieuXuat.Text=dgvHopDong.Rows[r].Cells[1].Value.ToString();
+        }
     }
 }

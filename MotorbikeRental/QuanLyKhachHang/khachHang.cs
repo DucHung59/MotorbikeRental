@@ -28,5 +28,10 @@ namespace MotorbikeRental.QuanLyKhachHang
             dgv.DataSource = dt;
             dgv.AutoResizeColumns();
         }
+
+        private void dgvKH_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

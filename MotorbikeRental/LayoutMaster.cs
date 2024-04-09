@@ -77,7 +77,7 @@ namespace MotorbikeRental
                 tsmiDSNV.Visible = false;
                 tsmiQuyen.Visible = false;
                 /**custom another*/
-                tsmiDanhGia.Font = new Font("Segoe UI", 10, FontStyle.Bold, GraphicsUnit.Point);
+                //tsmiDanhGia.Font = new Font("Segoe UI", 10, FontStyle.Bold, GraphicsUnit.Point);
                 tsmiBanGiao.Font = new Font("Segoe UI", 10, FontStyle.Bold, GraphicsUnit.Point);
                 tsmiHopDong.Font= new Font("Segoe UI", 10, FontStyle.Bold, GraphicsUnit.Point);
 
