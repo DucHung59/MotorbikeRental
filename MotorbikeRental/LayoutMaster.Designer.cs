@@ -61,7 +61,7 @@ namespace MotorbikeRental
             // 
             // menuStrip
             // 
-            this.menuStrip.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.menuStrip.BackColor = System.Drawing.Color.Gold;
             this.menuStrip.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -200,7 +200,7 @@ namespace MotorbikeRental
             this.quảnLýBánHàngToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.quảnLýBánHàngToolStripMenuItem.Name = "quảnLýBánHàngToolStripMenuItem";
             this.quảnLýBánHàngToolStripMenuItem.Size = new System.Drawing.Size(221, 27);
-            this.quảnLýBánHàngToolStripMenuItem.Text = "Quản lý cho thuê xe";
+            this.quảnLýBánHàngToolStripMenuItem.Text = "Quản lý giao dịch";
             this.quảnLýBánHàngToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tsmiHopDong
@@ -349,6 +349,7 @@ namespace MotorbikeRental
             // 
             // tsmiLienHe
             // 
+            this.tsmiLienHe.BackColor = System.Drawing.Color.Gold;
             this.tsmiLienHe.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tsmiLienHe.Image = ((System.Drawing.Image)(resources.GetObject("tsmiLienHe.Image")));
             this.tsmiLienHe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -377,7 +378,9 @@ namespace MotorbikeRental
             // panel1
             // 
             this.panel1.AutoScroll = true;
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.ForeColor = System.Drawing.SystemColors.MenuText;
             this.panel1.Location = new System.Drawing.Point(234, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(978, 675);
@@ -387,9 +390,9 @@ namespace MotorbikeRental
             // lbTaiKhoanDangDangNhap
             // 
             this.lbTaiKhoanDangDangNhap.AutoSize = true;
-            this.lbTaiKhoanDangDangNhap.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lbTaiKhoanDangDangNhap.BackColor = System.Drawing.Color.Gold;
             this.lbTaiKhoanDangDangNhap.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbTaiKhoanDangDangNhap.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lbTaiKhoanDangDangNhap.ForeColor = System.Drawing.SystemColors.Highlight;
             this.lbTaiKhoanDangDangNhap.Location = new System.Drawing.Point(0, 11);
             this.lbTaiKhoanDangDangNhap.Name = "lbTaiKhoanDangDangNhap";
             this.lbTaiKhoanDangDangNhap.Size = new System.Drawing.Size(228, 23);
@@ -405,11 +408,12 @@ namespace MotorbikeRental
             this.Controls.Add(this.lbTaiKhoanDangDangNhap);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip);
+            this.ForeColor = System.Drawing.Color.Linen;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
             this.Name = "LayoutMaster";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Motorbike Rental ";
+            this.Text = "Văn Minh Coporation";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LayoutMaster_FormClosing);
             this.Load += new System.EventHandler(this.LayoutMaster_Load);
             this.menuStrip.ResumeLayout(false);

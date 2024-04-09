@@ -59,7 +59,7 @@ namespace MotorbikeRental.DangNhap_DangKi
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(6)))), ((int)(((byte)(31)))));
+            this.panel2.BackColor = System.Drawing.Color.Orange;
             this.panel2.Controls.Add(this.btnDangKy);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
@@ -106,7 +106,7 @@ namespace MotorbikeRental.DangNhap_DangKi
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(350, 108);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Welcome to Motorbike Rental";
+            this.label5.Text = "Welcome to Văn Minh Coporation";
             // 
             // panel1
             // 
@@ -132,7 +132,7 @@ namespace MotorbikeRental.DangNhap_DangKi
             this.ckbHienMK.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.ckbHienMK.Location = new System.Drawing.Point(112, 232);
             this.ckbHienMK.Name = "ckbHienMK";
-            this.ckbHienMK.Size = new System.Drawing.Size(121, 23);
+            this.ckbHienMK.Size = new System.Drawing.Size(113, 21);
             this.ckbHienMK.TabIndex = 10;
             this.ckbHienMK.Text = "Hiện mật khẩu";
             this.ckbHienMK.UseVisualStyleBackColor = true;
@@ -165,7 +165,7 @@ namespace MotorbikeRental.DangNhap_DangKi
             this.link_DangKy.LinkColor = System.Drawing.Color.DimGray;
             this.link_DangKy.Location = new System.Drawing.Point(109, 348);
             this.link_DangKy.Name = "link_DangKy";
-            this.link_DangKy.Size = new System.Drawing.Size(225, 17);
+            this.link_DangKy.Size = new System.Drawing.Size(208, 16);
             this.link_DangKy.TabIndex = 5;
             this.link_DangKy.TabStop = true;
             this.link_DangKy.Text = "Chưa có tài khoản ? Đăng ký ngay";
@@ -178,7 +178,7 @@ namespace MotorbikeRental.DangNhap_DangKi
             this.link_QuenMK.LinkColor = System.Drawing.Color.DimGray;
             this.link_QuenMK.Location = new System.Drawing.Point(250, 234);
             this.link_QuenMK.Name = "link_QuenMK";
-            this.link_QuenMK.Size = new System.Drawing.Size(120, 19);
+            this.link_QuenMK.Size = new System.Drawing.Size(113, 17);
             this.link_QuenMK.TabIndex = 4;
             this.link_QuenMK.TabStop = true;
             this.link_QuenMK.Text = "Quên mật khẩu ?";
@@ -186,8 +186,8 @@ namespace MotorbikeRental.DangNhap_DangKi
             // 
             // btnDangNhap
             // 
-            this.btnDangNhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(6)))), ((int)(((byte)(31)))));
-            this.btnDangNhap.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(6)))), ((int)(((byte)(31)))));
+            this.btnDangNhap.BackColor = System.Drawing.Color.Orange;
+            this.btnDangNhap.BackgroundColor = System.Drawing.Color.Orange;
             this.btnDangNhap.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnDangNhap.BorderRadius = 5;
             this.btnDangNhap.BorderSize = 0;
@@ -222,7 +222,7 @@ namespace MotorbikeRental.DangNhap_DangKi
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(6)))), ((int)(((byte)(31)))));
             this.label2.Location = new System.Drawing.Point(140, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 32);
+            this.label2.Size = new System.Drawing.Size(153, 31);
             this.label2.TabIndex = 0;
             this.label2.Text = "ĐĂNG NHẬP";
             // 
@@ -238,7 +238,7 @@ namespace MotorbikeRental.DangNhap_DangKi
             // 
             // panel_Title
             // 
-            this.panel_Title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(6)))), ((int)(((byte)(31)))));
+            this.panel_Title.BackColor = System.Drawing.Color.Orange;
             this.panel_Title.Controls.Add(this.btnClose);
             this.panel_Title.Controls.Add(this.label1);
             this.panel_Title.Controls.Add(this.pictureBox1);
@@ -273,9 +273,9 @@ namespace MotorbikeRental.DangNhap_DangKi
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(60, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(214, 32);
+            this.label1.Size = new System.Drawing.Size(305, 39);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Motorbike Rental";
+            this.label1.Text = "Văn Minh Coporation";
             // 
             // pictureBox1
             // 

@@ -320,7 +320,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\2.ico" />
+    <Content Include="Images\2.png" />
     <Content Include="Images\logo.ico" />
+    <Content Include="Images\trangchu.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
