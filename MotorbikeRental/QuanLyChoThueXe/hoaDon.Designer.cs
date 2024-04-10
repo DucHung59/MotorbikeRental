@@ -476,6 +476,7 @@ namespace MotorbikeRental.QuanLyChoThueXe
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextColor = System.Drawing.Color.White;
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnXoa
             // 
@@ -537,7 +538,7 @@ namespace MotorbikeRental.QuanLyChoThueXe
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // hopDong
+            // hoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -546,7 +547,7 @@ namespace MotorbikeRental.QuanLyChoThueXe
             this.Controls.Add(this.lbDSHopDong);
             this.Controls.Add(this.plDSNCC);
             this.Controls.Add(this.plThongTinNCC);
-            this.Name = "hopDong";
+            this.Name = "hoaDon";
             this.Load += new System.EventHandler(this.hopDong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHopDong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderHopDong)).EndInit();
