@@ -398,8 +398,8 @@ namespace MotorbikeRental.QuanLyChoThueXe
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            try
-            {
+            /*try
+            {*/
                 if (checkValid(sender, e))
                 {
                     if (phieuNhapBLL.checkExistsNameAndCategory(tbMaPhieuN.Text))
@@ -421,8 +421,8 @@ namespace MotorbikeRental.QuanLyChoThueXe
                         MessageBox.Show(MS_004, MS_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-            }
-            catch (Exception ex)
+            /*}*/
+            /*catch (Exception ex)
             {
                 string error = ex.Message;
                 if (error.Contains("40"))
@@ -433,9 +433,7 @@ namespace MotorbikeRental.QuanLyChoThueXe
                 {
                     MessageBox.Show(MS_Error, MS_Warn, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-
-
-            }
+            }*/
         }
 
         private void btnXoa_Click(object sender, EventArgs e)

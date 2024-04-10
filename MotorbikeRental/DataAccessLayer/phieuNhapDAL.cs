@@ -38,16 +38,14 @@ namespace MotorbikeRental.DataAccessLayer
                 using (SqlCommand cmd = cnn.CreateCommand())
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "sp_ThemPhieuN";
-                    cmd.Parameters.Add("@iPhieuN", iPhieuN);
+                    cmd.CommandText = "sp_ThemPhieuNhap";
+                    cmd.Parameters.Add("@PK_iPhieuN", iPhieuN);
                     cmd.Parameters.Add("@iTTrongTai", iTTrongTai);
                     cmd.Parameters.Add("@iTongSLN", iTongSLN);
-                    cmd.Parameters.Add("@iTongGiaN", iTongGiaN);
-                    cmd.Parameters.Add("@iNCC", iNCC);
-                    cmd.Parameters.Add("@sCMND", sCMND);
-                    cmd.Parameters.Add("@iPhieuThu", iPhieuThu);
-                    cmd.Parameters.Add("@iSoLuongN", iSoLuongN);
-                    cmd.Parameters.Add("@iLoaiPT", iLoaiPT);
+                    cmd.Parameters.Add("@fTongGiaN", iTongGiaN);
+                    cmd.Parameters.Add("@FK_iNCC", iNCC);
+                    cmd.Parameters.Add("@FK_sCMNDnv", sCMND);
+                    cmd.Parameters.Add("@FK_iPhieuX", iPhieuThu);
 
                     cnn.Open();
                     int i = cmd.ExecuteNonQuery();
@@ -63,8 +61,8 @@ namespace MotorbikeRental.DataAccessLayer
                 using (SqlCommand cmd = cnn.CreateCommand())
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "sp_XoaPhieuN";
-                    cmd.Parameters.AddWithValue("@iMaPhieuN", iMaPhieuN);
+                    cmd.CommandText = "sp_XoaPhieuNhap";
+                    cmd.Parameters.AddWithValue("@PK_iPhieuN", iMaPhieuN);
                     cnn.Open();
                     int i = cmd.ExecuteNonQuery();
                     cnn.Close();
@@ -80,16 +78,15 @@ namespace MotorbikeRental.DataAccessLayer
                 using (SqlCommand cmd = cnn.CreateCommand())
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "sp_SuaPhieuN";
-                    cmd.Parameters.Add("@iPhieuN", iPhieuN);
+                    cmd.CommandText = "sp_SuaPhieuNhap";
+                    cmd.Parameters.Add("@PK_iPhieuN", iPhieuN);
                     cmd.Parameters.Add("@iTTrongTai", iTTrongTai);
                     cmd.Parameters.Add("@iTongSLN", iTongSLN);
-                    cmd.Parameters.Add("@iTongGiaN", iTongGiaN);
-                    cmd.Parameters.Add("@iNCC", iNCC);
-                    cmd.Parameters.Add("@sCMND", sCMND);
-                    cmd.Parameters.Add("@iPhieuThu", iPhieuThu);
-                    cmd.Parameters.Add("@iSoLuongN", iSoLuongN);
-                    cmd.Parameters.Add("@iLoaiPT", iLoaiPT);
+                    cmd.Parameters.Add("@fTongGiaN", iTongGiaN);
+                    cmd.Parameters.Add("@FK_iNCC", iNCC);
+                    cmd.Parameters.Add("@FK_sCMNDnv", sCMND);
+                    cmd.Parameters.Add("@FK_iPhieuX", iPhieuThu);
+
 
                     cnn.Open();
                     int i = cmd.ExecuteNonQuery();
