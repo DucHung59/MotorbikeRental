@@ -37,19 +37,19 @@ namespace MotorbikeRental.QuanLyKho
             this.sUrl = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnChonAnh = new MotorbikeRental.PresentationLayer.Custom.VBButton();
             this.pbAnh = new System.Windows.Forms.PictureBox();
             this.tbAnh = new System.Windows.Forms.TextBox();
             this.lbAnh = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.errorProviderAnhPT = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnChonAnh = new MotorbikeRental.PresentationLayer.Custom.VBButton();
             this.btnSua = new MotorbikeRental.PresentationLayer.Custom.VBButton();
             this.btnThem = new MotorbikeRental.PresentationLayer.Custom.VBButton();
             this.btnXoa = new MotorbikeRental.PresentationLayer.Custom.VBButton();
             this.btnTimKiem = new MotorbikeRental.PresentationLayer.Custom.VBButton();
             this.btnLamMoi = new MotorbikeRental.PresentationLayer.Custom.VBButton();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.errorProviderAnhPT = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnhPT)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAnh)).BeginInit();
@@ -64,7 +64,7 @@ namespace MotorbikeRental.QuanLyKho
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(282, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(393, 32);
+            this.label1.Size = new System.Drawing.Size(372, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "DANH SÁCH ẢNH PHƯƠNG TIỆN";
             // 
@@ -120,28 +120,9 @@ namespace MotorbikeRental.QuanLyKho
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.Location = new System.Drawing.Point(25, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(269, 25);
+            this.label2.Size = new System.Drawing.Size(258, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "I. Thông tin ảnh phương tiện";
-            // 
-            // btnChonAnh
-            // 
-            this.btnChonAnh.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnChonAnh.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.btnChonAnh.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnChonAnh.BorderRadius = 5;
-            this.btnChonAnh.BorderSize = 0;
-            this.btnChonAnh.FlatAppearance.BorderSize = 0;
-            this.btnChonAnh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChonAnh.ForeColor = System.Drawing.Color.White;
-            this.btnChonAnh.Location = new System.Drawing.Point(29, 117);
-            this.btnChonAnh.Name = "btnChonAnh";
-            this.btnChonAnh.Size = new System.Drawing.Size(150, 40);
-            this.btnChonAnh.TabIndex = 4;
-            this.btnChonAnh.Text = "Chọn ảnh";
-            this.btnChonAnh.TextColor = System.Drawing.Color.White;
-            this.btnChonAnh.UseVisualStyleBackColor = false;
-            this.btnChonAnh.Click += new System.EventHandler(this.btnChonAnh_Click);
             // 
             // pbAnh
             // 
@@ -191,6 +172,48 @@ namespace MotorbikeRental.QuanLyKho
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(727, 64);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dgvAnhPT);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Location = new System.Drawing.Point(461, 98);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(479, 395);
+            this.panel2.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(9, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(269, 25);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "II. Danh sách ảnh phương tiện";
+            // 
+            // errorProviderAnhPT
+            // 
+            this.errorProviderAnhPT.ContainerControl = this;
+            // 
+            // btnChonAnh
+            // 
+            this.btnChonAnh.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnChonAnh.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.btnChonAnh.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnChonAnh.BorderRadius = 5;
+            this.btnChonAnh.BorderSize = 0;
+            this.btnChonAnh.FlatAppearance.BorderSize = 0;
+            this.btnChonAnh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChonAnh.ForeColor = System.Drawing.Color.White;
+            this.btnChonAnh.Location = new System.Drawing.Point(29, 117);
+            this.btnChonAnh.Name = "btnChonAnh";
+            this.btnChonAnh.Size = new System.Drawing.Size(150, 40);
+            this.btnChonAnh.TabIndex = 4;
+            this.btnChonAnh.Text = "Chọn ảnh";
+            this.btnChonAnh.TextColor = System.Drawing.Color.White;
+            this.btnChonAnh.UseVisualStyleBackColor = false;
+            this.btnChonAnh.Click += new System.EventHandler(this.btnChonAnh_Click);
             // 
             // btnSua
             // 
@@ -291,29 +314,6 @@ namespace MotorbikeRental.QuanLyKho
             this.btnLamMoi.TextColor = System.Drawing.Color.Black;
             this.btnLamMoi.UseVisualStyleBackColor = false;
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.dgvAnhPT);
-            this.panel2.Location = new System.Drawing.Point(461, 98);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(479, 395);
-            this.panel2.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(9, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(278, 25);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "II. Danh sách ảnh phương tiện";
-            // 
-            // errorProviderAnhPT
-            // 
-            this.errorProviderAnhPT.ContainerControl = this;
             // 
             // anh
             // 
