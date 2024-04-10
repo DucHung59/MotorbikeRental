@@ -388,6 +388,7 @@ BEGIN
 END
 select*from tblNguoiDung
 select*from tblCTNguoiDung
+select*from tblKhachHang
 /************/
 CREATE proc sp_SuaNCC
 	@NCC int,
@@ -410,6 +411,7 @@ BEGIN
 	where @NCC =PK_iNCC
 END
 
+insert into tblKhachHang values(N'Nguyễn Văn Nam','0965756435',N'Nam','00136784546765',N'Quảng Ninh')
 
 CREATE PROCEDURE sp_XoaNCC
     @NCC int,
