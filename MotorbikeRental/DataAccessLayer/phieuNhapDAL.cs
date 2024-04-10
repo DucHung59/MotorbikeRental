@@ -17,12 +17,12 @@ namespace MotorbikeRental.DataAccessLayer
         {
             using (SqlConnection cnn = new SqlConnection(constr))
             {
-                using (SqlCommand cmd = new SqlCommand("sp_PhieuNhap", cnn))
+                using (SqlCommand cmd = new SqlCommand("Select * from tblPhieuNhap", cnn))
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandType = CommandType.Text;
                     using (SqlDataAdapter ad = new SqlDataAdapter(cmd))
                     {
-                        using (DataTable dt = new DataTable("vv_PhieuThu"))
+                        using (DataTable dt = new DataTable("tblPhieuNhap"))
                         {
                             ad.Fill(dt);
                             return dt;
@@ -99,6 +99,7 @@ namespace MotorbikeRental.DataAccessLayer
                 }
             }
         }
+
 
     }
 }

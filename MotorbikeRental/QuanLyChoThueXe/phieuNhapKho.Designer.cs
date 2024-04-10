@@ -34,6 +34,7 @@ namespace MotorbikeRental.QuanLyChoThueXe
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tbMaPhieuThu = new System.Windows.Forms.ComboBox();
             this.cbCMND = new System.Windows.Forms.ComboBox();
             this.tbHangSX = new System.Windows.Forms.TextBox();
             this.tbTenPT = new System.Windows.Forms.TextBox();
@@ -59,15 +60,14 @@ namespace MotorbikeRental.QuanLyChoThueXe
             this.lbKho = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnThem = new MotorbikeRental.PresentationLayer.Custom.VBButton();
-            this.btnSua = new MotorbikeRental.PresentationLayer.Custom.VBButton();
-            this.btnXoa = new MotorbikeRental.PresentationLayer.Custom.VBButton();
-            this.btnLamMoi = new MotorbikeRental.PresentationLayer.Custom.VBButton();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvPhieuNhap = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tbMaPhieuThu = new System.Windows.Forms.ComboBox();
+            this.btnThem = new MotorbikeRental.PresentationLayer.Custom.VBButton();
+            this.btnSua = new MotorbikeRental.PresentationLayer.Custom.VBButton();
+            this.btnXoa = new MotorbikeRental.PresentationLayer.Custom.VBButton();
+            this.btnLamMoi = new MotorbikeRental.PresentationLayer.Custom.VBButton();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuNhap)).BeginInit();
@@ -139,6 +139,15 @@ namespace MotorbikeRental.QuanLyChoThueXe
             this.panel1.Size = new System.Drawing.Size(1041, 470);
             this.panel1.TabIndex = 10;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // tbMaPhieuThu
+            // 
+            this.tbMaPhieuThu.FormattingEnabled = true;
+            this.tbMaPhieuThu.Location = new System.Drawing.Point(735, 380);
+            this.tbMaPhieuThu.Name = "tbMaPhieuThu";
+            this.tbMaPhieuThu.Size = new System.Drawing.Size(282, 24);
+            this.tbMaPhieuThu.TabIndex = 35;
+            this.tbMaPhieuThu.SelectedIndexChanged += new System.EventHandler(this.tbMaPhieuThu_SelectedIndexChanged);
             // 
             // cbCMND
             // 
@@ -343,7 +352,7 @@ namespace MotorbikeRental.QuanLyChoThueXe
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.Location = new System.Drawing.Point(25, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(220, 25);
+            this.label2.Size = new System.Drawing.Size(212, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "I. Thông tin phiếu nhập";
             // 
@@ -372,7 +381,7 @@ namespace MotorbikeRental.QuanLyChoThueXe
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(489, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 32);
+            this.label1.Size = new System.Drawing.Size(169, 31);
             this.label1.TabIndex = 8;
             this.label1.Text = "QUẢN LÝ KHO";
             // 
@@ -394,6 +403,42 @@ namespace MotorbikeRental.QuanLyChoThueXe
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(141, 390);
             this.tableLayoutPanel1.TabIndex = 9;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(9, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(223, 25);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "II. Danh sách phiếu nhập";
+            // 
+            // dgvPhieuNhap
+            // 
+            this.dgvPhieuNhap.AllowUserToAddRows = false;
+            this.dgvPhieuNhap.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvPhieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPhieuNhap.Location = new System.Drawing.Point(14, 56);
+            this.dgvPhieuNhap.Name = "dgvPhieuNhap";
+            this.dgvPhieuNhap.RowHeadersWidth = 51;
+            this.dgvPhieuNhap.RowTemplate.Height = 24;
+            this.dgvPhieuNhap.Size = new System.Drawing.Size(1154, 312);
+            this.dgvPhieuNhap.TabIndex = 1;
+            this.dgvPhieuNhap.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhieuNhap_CellContentClick);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.dgvPhieuNhap);
+            this.panel2.Location = new System.Drawing.Point(23, 594);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1204, 395);
+            this.panel2.TabIndex = 11;
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // btnThem
             // 
@@ -475,51 +520,6 @@ namespace MotorbikeRental.QuanLyChoThueXe
             this.btnLamMoi.UseVisualStyleBackColor = false;
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(9, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(229, 25);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "II. Danh sách phiếu nhập";
-            // 
-            // dgvPhieuNhap
-            // 
-            this.dgvPhieuNhap.AllowUserToAddRows = false;
-            this.dgvPhieuNhap.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvPhieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPhieuNhap.Location = new System.Drawing.Point(14, 56);
-            this.dgvPhieuNhap.Name = "dgvPhieuNhap";
-            this.dgvPhieuNhap.RowHeadersWidth = 51;
-            this.dgvPhieuNhap.RowTemplate.Height = 24;
-            this.dgvPhieuNhap.Size = new System.Drawing.Size(1154, 312);
-            this.dgvPhieuNhap.TabIndex = 1;
-            this.dgvPhieuNhap.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhieuNhap_CellContentClick);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.dgvPhieuNhap);
-            this.panel2.Location = new System.Drawing.Point(23, 594);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1204, 395);
-            this.panel2.TabIndex = 11;
-            // 
-            // errorProvider
-            // 
-            this.errorProvider.ContainerControl = this;
-            // 
-            // tbMaPhieuThu
-            // 
-            this.tbMaPhieuThu.FormattingEnabled = true;
-            this.tbMaPhieuThu.Location = new System.Drawing.Point(735, 380);
-            this.tbMaPhieuThu.Name = "tbMaPhieuThu";
-            this.tbMaPhieuThu.Size = new System.Drawing.Size(282, 24);
-            this.tbMaPhieuThu.TabIndex = 35;
-            this.tbMaPhieuThu.SelectedIndexChanged += new System.EventHandler(this.tbMaPhieuThu_SelectedIndexChanged);
-            // 
             // phieuNhapKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -530,9 +530,8 @@ namespace MotorbikeRental.QuanLyChoThueXe
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel2);
             this.Name = "phieuNhapKho";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "phieuNhapKho";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.phieuNhapKho_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
