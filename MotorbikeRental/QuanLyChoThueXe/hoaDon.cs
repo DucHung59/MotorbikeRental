@@ -1,4 +1,5 @@
 ﻿using MotorbikeRental.BusinessLogicLayer;
+using MotorbikeRental.DataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,22 @@ namespace MotorbikeRental.QuanLyChoThueXe
 {
     public partial class hoaDon : Form
     {
+        private const string MS_001 = "Không được để trống";
+        private const string MS_002 = "Thêm thành công";
+        private const string MS_003 = "Thêm thất bại";
+        private const string MS_004 = "Loại phương tiện đã tồn tại đã tồn tại";
+        private const string MS_005 = "Sửa thành công";
+        private const string MS_006 = "Sửa thất bại";
+        private const string MS_007 = "Xóa thành công";
+        private const string MS_008 = "Xóa thất bại";
+        private const string MS_009 = "Vui lòng nhập thông tin muốn tìm";
+        private const string MS_013 = "Không tìm thấy thông tin";
+        private const string MS_Notify = "Thông báo";
+        private const string MS_Error = "Lỗi";
+        private const string MS_Confirm = "Bạn có chắc chắn xóa không?";
+        private const string MS_Warn = "Cảnh báo";
+        private const string MS_Action = "Không thể xóa do tồn tại khóa ngoại";
+        private const string MS_SQL = "Lỗi SQL";
 
         hoaDonBLL hopDongBLL = new hoaDonBLL();
         string constr = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
@@ -29,7 +46,7 @@ namespace MotorbikeRental.QuanLyChoThueXe
             getDataCMNDKh();
             getDataCMNDNV();
             dgvHopDong.ClearSelection();
-            
+
         }
         private void loadDataToDataGridView(DataGridView dgv, DataTable dt)
         {
@@ -95,10 +112,10 @@ namespace MotorbikeRental.QuanLyChoThueXe
         private void btnThem_Click(object sender, EventArgs e)
         {
 
-            int PK_iHopDong  = Convert.ToInt32(tbIDHopDong.Text.Trim());
+            int PK_iHopDong = Convert.ToInt32(tbIDHopDong.Text.Trim());
             int FK_iPhuongTien = Convert.ToInt32(tbIDPhuongTien.Text.Trim());
             DateTime dNgayThue = DateTime.Now;
-            DateTime dNgayHenTra =  dpNgayHenTra.Value;
+            DateTime dNgayHenTra = dpNgayHenTra.Value;
             float fTongTienDatCoc = float.Parse(tbTongTienDatCoc.Text);
             float fTienThuePT = float.Parse(tbTienThuePt.Text);
 
@@ -199,14 +216,14 @@ namespace MotorbikeRental.QuanLyChoThueXe
 
                 if (result == DialogResult.Yes)
                 {
-                    try 
-                    { 
+                    try
+                    {
                         using (SqlConnection cnn = new SqlConnection(constr))
                         {
                             using (SqlCommand cmd = cnn.CreateCommand())
                             {
                                 cmd.CommandType = CommandType.Text;
-                                cmd.CommandText = "delete tblHopDong where PK_iHopDong = @PK_iHopDong";
+                                cmd.CommandText = "delete from tblHopDong where PK_iHopDong = @PK_iHopDong";
                                 cmd.Parameters.AddWithValue("@PK_iHopDong", PK_iHopDong);
                                 cnn.Open();
                                 cmd.ExecuteNonQuery();
@@ -241,14 +258,36 @@ namespace MotorbikeRental.QuanLyChoThueXe
         {
             int r = dgvHopDong.CurrentRow.Index;
             tbIDHopDong.Text = dgvHopDong.Rows[r].Cells[0].Value.ToString();
-            tbTongTienDatCoc.Text= dgvHopDong.Rows[r].Cells[1].Value.ToString();
-            tbTienThuePt.Text= dgvHopDong.Rows[r].Cells[2].Value.ToString();
-            tbIDPhuongTien.Text=dgvHopDong.Rows[r].Cells[1].Value.ToString();
-            dtpNgayThue.Text=dgvHopDong.Rows[r].Cells[1].Value.ToString();
-            dpNgayHenTra.Text=dgvHopDong.Rows[r].Cells[1].Value.ToString();
-            cbCNMDKH.Text=dgvHopDong.Rows[r].Cells[1].Value.ToString();
-            cbCMNDNV.Text=dgvHopDong.Rows[r].Cells[1].Value.ToString();
-            txtPhieuXuat.Text=dgvHopDong.Rows[r].Cells[1].Value.ToString();
+            tbTongTienDatCoc.Text = dgvHopDong.Rows[r].Cells[1].Value.ToString();
+            tbTienThuePt.Text = dgvHopDong.Rows[r].Cells[2].Value.ToString();
+            tbIDPhuongTien.Text = dgvHopDong.Rows[r].Cells[1].Value.ToString();
+            dtpNgayThue.Text = dgvHopDong.Rows[r].Cells[1].Value.ToString();
+            dpNgayHenTra.Text = dgvHopDong.Rows[r].Cells[1].Value.ToString();
+            cbCNMDKH.Text = dgvHopDong.Rows[r].Cells[1].Value.ToString();
+            cbCMNDNV.Text = dgvHopDong.Rows[r].Cells[1].Value.ToString();
+            txtPhieuXuat.Text = dgvHopDong.Rows[r].Cells[1].Value.ToString();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            bool check = true;
+
+
+            if (tbIDHopDong.Text == "" && tbIDPhuongTien.Text == "")
+            {
+                MessageBox.Show(MS_009, MS_Notify, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                check = false;
+            }
+            if(check)
+            {
+                btnLamMoi.Enabled = true;
+                DataTable dt = hopDongBLL.search(tbIDHopDong.Text, tbIDPhuongTien.Text);
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show(MS_013, MS_Notify, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                loadDataToDataGridView(dgvHopDong, dt);
+            }
         }
     }
 }

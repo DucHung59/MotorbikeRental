@@ -27,6 +27,9 @@ namespace MotorbikeRental.BusinessLogicLayer
             return hopDongDAL.update(PK_iHopDong, FK_iPhuongTien, dNgayThue, dNgayHenTra, fTongTienDatCoc, fTienThuePT, FK_sCMND, FK_sCMNDnv, FK_iPhieuX);
         }
 
-
+        public DataTable search(string PK_iHopDong, string FK_iPhuongTien)
+        {
+            return hopDongDAL.search(PK_iHopDong, FK_iPhuongTien);
+        }
     }
 }

@@ -40,7 +40,7 @@ namespace MotorbikeRental.DataAccessLayer
                 using (SqlCommand cmd = cnn.CreateCommand())
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "proc_ThemHopDong";
+                    cmd.CommandText = "sp_ThemHopDong";
                     cmd.Parameters.AddWithValue("@PK_iHopDong", PK_iHopDong);
                     cmd.Parameters.AddWithValue("@FK_iPhuongTien", FK_iPhuongTien);
                     cmd.Parameters.AddWithValue("@dNgayThue", dNgayThue);
@@ -68,7 +68,7 @@ namespace MotorbikeRental.DataAccessLayer
                 using (SqlCommand cmd = cnn.CreateCommand())
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "proc_SuaHopDong";
+                    cmd.CommandText = "sp_SuaHopDong";
                     cmd.Parameters.AddWithValue("@PK_iHopDong", PK_iHopDong);
                     cmd.Parameters.AddWithValue("@FK_iPhuongTien", FK_iPhuongTien);
                     cmd.Parameters.AddWithValue("@dNgayThue", dNgayThue);
@@ -88,6 +88,26 @@ namespace MotorbikeRental.DataAccessLayer
         }
 
 
-
+        public DataTable search(string PK_iHopDong, string FK_iPhuongTien)
+        {
+            using (SqlConnection cnn = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "sp_TimHopDong";
+                    cmd.Parameters.AddWithValue("@PK_iHopDong", PK_iHopDong);
+                    cmd.Parameters.AddWithValue("@FK_iPhuongTien", FK_iPhuongTien);
+                    using (SqlDataAdapter ad = new SqlDataAdapter(cmd))
+                    {
+                        using (DataTable dt = new DataTable())
+                        {
+                            ad.Fill(dt);
+                            return dt;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
