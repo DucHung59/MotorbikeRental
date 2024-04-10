@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace MotorbikeRental.BusinessLogicLayer
 {
-    internal class hopDongBLL
+    internal class hoaDonBLL
     {
-        hopDongDAL hopDongDAL = new hopDongDAL();
+        hoaDonDAL hopDongDAL = new hoaDonDAL();
         public DataTable findAll()
         {
             return hopDongDAL.findAll();

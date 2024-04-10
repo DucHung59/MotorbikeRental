@@ -1,7 +1,7 @@
 ﻿
 namespace MotorbikeRental.QuanLyChoThueXe
 {
-    partial class hopDong
+    partial class hoaDon
     {
         /// <summary>
         /// Required designer variable.

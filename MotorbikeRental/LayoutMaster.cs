@@ -78,7 +78,6 @@ namespace MotorbikeRental
                 tsmiQuyen.Visible = false;
                 /**custom another*/
                 //tsmiDanhGia.Font = new Font("Segoe UI", 10, FontStyle.Bold, GraphicsUnit.Point);
-                tsmiBanGiao.Font = new Font("Segoe UI", 10, FontStyle.Bold, GraphicsUnit.Point);
                 tsmiHopDong.Font= new Font("Segoe UI", 10, FontStyle.Bold, GraphicsUnit.Point);
 
             }
@@ -152,7 +151,7 @@ namespace MotorbikeRental
         private void hợpĐồngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            hopDong tc = new QuanLyChoThueXe.hopDong();
+            hoaDon tc = new QuanLyChoThueXe.hoaDon();
             tc.TopLevel = false;
             panel1.Controls.Add(tc);
             tc.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -160,16 +159,7 @@ namespace MotorbikeRental
             tc.Show();
         }
 
-        private void bànGiaoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            panel1.Controls.Clear();
-            banGiao tc = new QuanLyChoThueXe.banGiao();
-            tc.TopLevel = false;
-            panel1.Controls.Add(tc);
-            tc.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            tc.Dock = DockStyle.Fill;
-            tc.Show();
-        }
+      
 
         private void phiếuXuấtKhoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -204,16 +194,7 @@ namespace MotorbikeRental
             tc.Show();
         }
 
-        private void đánhGiáToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            panel1.Controls.Clear();
-            danhGia tc = new QuanLyKhachHang.danhGia();
-            tc.TopLevel = false;
-            panel1.Controls.Add(tc);
-            tc.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            tc.Dock = DockStyle.Fill;
-            tc.Show();
-        }
+   
 
         private void danhSáchNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {

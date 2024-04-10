@@ -16,12 +16,12 @@ namespace MotorbikeRental.DataAccessLayer
         {
             using (SqlConnection cnn = new SqlConnection(constr))
             {
-                using (SqlCommand cmd = new SqlCommand("Select * from tblKhachhang", cnn))
+                using (SqlCommand cmd = new SqlCommand("Select * from tblKhachHang", cnn))
                 {
                     cmd.CommandType = CommandType.Text;
                     using (SqlDataAdapter ad = new SqlDataAdapter(cmd))
                     {
-                        using (DataTable dt = new DataTable("tblChucVu"))
+                        using (DataTable dt = new DataTable("tblKhachHang"))
                         {
                             ad.Fill(dt);
                             return dt;

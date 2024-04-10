@@ -40,7 +40,6 @@ namespace MotorbikeRental
             this.tsmiAnhSanPham = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýBánHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHopDong = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiBanGiao = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiPhieuXuatKho = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiPhieuNhapKho = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,7 +72,6 @@ namespace MotorbikeRental
             this.tsmiAnhSanPham,
             this.quảnLýBánHàngToolStripMenuItem,
             this.tsmiHopDong,
-            this.tsmiBanGiao,
             this.tsmiPhieuXuatKho,
             this.tsmiPhieuNhapKho,
             this.quảnLýKháchHàngToolStripMenuItem,
@@ -211,17 +209,6 @@ namespace MotorbikeRental
             this.tsmiHopDong.Text = "Hóa đơn";
             this.tsmiHopDong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiHopDong.Click += new System.EventHandler(this.hợpĐồngToolStripMenuItem_Click);
-            // 
-            // tsmiBanGiao
-            // 
-            this.tsmiBanGiao.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiBanGiao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiBanGiao.Margin = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.tsmiBanGiao.Name = "tsmiBanGiao";
-            this.tsmiBanGiao.Size = new System.Drawing.Size(191, 27);
-            this.tsmiBanGiao.Text = "Bàn giao";
-            this.tsmiBanGiao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiBanGiao.Click += new System.EventHandler(this.bànGiaoToolStripMenuItem_Click);
             // 
             // tsmiPhieuXuatKho
             // 
@@ -421,7 +408,6 @@ namespace MotorbikeRental
         private System.Windows.Forms.ToolStripMenuItem tsmiSanPham;
         private System.Windows.Forms.ToolStripMenuItem quảnLýBánHàngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiHopDong;
-        private System.Windows.Forms.ToolStripMenuItem tsmiBanGiao;
         private System.Windows.Forms.ToolStripMenuItem tsmiPhieuXuatKho;
         private System.Windows.Forms.ToolStripMenuItem tsmiPhieuNhapKho;
         private System.Windows.Forms.ToolStripMenuItem quảnLýKháchHàngToolStripMenuItem;

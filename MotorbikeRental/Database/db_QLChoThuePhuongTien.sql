@@ -41,7 +41,7 @@ create table tblPhieuNhap
 	iTongSLN int,
 	fTongGiaN float,
 	FK_iNCC int,
-	FK_sCMNDnv varchar(12),
+	FK_iMaNV varchar(12),
 	FK_iPhieuThu int
 )
 
@@ -74,7 +74,7 @@ create table tblPhieuXuat
 	PK_iPhieuX int primary key not null,
 	iTongSLX int,
 	fTongTien float,
-	FK_sCMNDnv varchar(12),
+	FK_iMaNV varchar(12),
 	FK_iPhieuThu int,
 )
 
@@ -117,7 +117,20 @@ create table tblAnhPT
 	sUrl image
 )
 
+create table tblKhachHang
+(
+	PK_iMaKH int primary key identity not null,
+	sTenKH nvarchar(max),
+	sSDT char(20),
+	sGioiTinh nvarchar(30),
+	sCCCD char(30),
+	sDiaChi nvarchar(30)
+)
+alter table tblHopDong add constraint FK_sCCCD_KhacHang foreign key (sCCCD) references tblKhachHang(sCCCD)
+alter table tblHopDong add sCCCD char(30)
 
+select*from tblKhachHang
+select *from tblHopDong
 create table tblChucVu
 (
 	PK_iChucVu int primary key,
@@ -146,50 +159,51 @@ create table tblCTNguoiDung
 	sChucVu nvarchar(100)
 )
 
-create table tblBanGiao
-(	
-	PK_iHopDong int primary key not null,
-	iPhuongTien int,
-	dNgayThue date,
-	dNgayHenTra date,
-	fTongTienDatCoc float,
-	fTongTienThuePT float,
-	sGhiChu nvarchar(255),
-	FK_sCMND varchar(12),
-	FK_sCMNDnv varchar(12),
 
-)
-
-create table tblHopDong
+drop table tblBanGiao
+create table tblHoaDon
 (	
-	PK_iHopDong int primary key not null,
+	PK_iMaHoaDon int primary key identity not null,
+	FK_iMaNV int,
+	FK_iMaKH int,
 	FK_iPhuongTien int,
-	dNgayThue date,
-	dNgayHenTra date,
-	fTongTienDatCoc float,
-	fTienThuePT float,
-	FK_sCMND varchar(12),
-	FK_sCMNDnv varchar(12),
-	FK_iPhieuX int
+	dNgayTra datetime,
+	dNgayThue datetime,
+	fTienCoc float,
+	fTienThue float
+	constraint FK_iMaKH foreign key (FK_iMaKH) references tblKhachHang (PK_iMaKH),
+	constraint FK_iMaNV foreign key (FK_iMaNV) references tblNhanVien (PK_iMaNV),
+	constraint FK_iPhuongTien foreign key (FK_iPhuongTien) references tblPhuongTien (PK_iPhuongTien)
 )
 create table tblNhanVien
 (
-	PK_sCMND varchar(12) primary key not null,
-	sTK nvarchar(50) unique not null,
-	sMK nvarchar(50),
-	sCauHoiBM nvarchar(100),
-	sCauTraLoi nvarchar(255),
-	dTGDNThatBai datetime,
-	dThoiGianDN datetime,
-	FK_iChucVu int
+	PK_iMaNV int primary key identity not null,
+	FK_iChucVu int,
+	sTenNV nvarchar(100),
+	sSDT nvarchar(20),
+	sGioiTinh nvarchar(10),
+	sCCCD nvarchar(30),
+	sDiaChi nvarchar(max)
+	constraint FK_iChucVu foreign key (FK_iChucVu) references tblChucVu (PK_iChucVu)
 )
+drop table tblNhanVien
+create table tblPhieuBaoTri
+(
+	PK_sMaBT varchar(20) primary key not null,
+	Fk_iPhuongTien int,
+	sGhiChu nvarchar(100),
+	FK_iMaNV int,
+	dThoiGian datetime,
+	constraint FK_iPhuongTien foreign key (FK_iPhuongTien) references tblPhuongTien (PK_iPhuongTien),
+	constraint FK_iMaNV foreign key (FK_iMaNV) references tblNhanVien (PK_iMaNV)
 
+)
 /****************************************************************************************/
 /*ADD CONSTRAINTS*/
 alter table tblPhieuNhap
 add constraint FK_NCC_PN foreign key (FK_iNCC) references tblNCC(PK_iNCC),
 	constraint FK_Kho_PN foreign key (FK_iPhieuThu) references tblKho(PK_iPhieuThu),
-	constraint FK_CTNV_PN foreign key (FK_sCMNDnv) references tblCTNV(PK_sCMNDnv)
+	constraint FK_CTNV_PN foreign key (FK_iMaNV) references tblCTNV(PK_sCMNDnv)
 
 alter table tblCTPhieuNhap
 add constraint FK_PN_CTPN foreign key (PK_iPhieuN) references tblPhieuNhap(PK_iPhieuN),
@@ -197,7 +211,7 @@ add constraint FK_PN_CTPN foreign key (PK_iPhieuN) references tblPhieuNhap(PK_iP
 
 alter table tblPhieuXuat
 add constraint FK_Kho_PX foreign key (FK_iPhieuThu) references tblKho(PK_iPhieuThu),
-	constraint FK_CTNV_PX foreign key (FK_sCMNDnv) references tblCTNV(PK_sCMNDnv)
+	constraint FK_CTNV_PX foreign key (FK_iMaNV) references tblCTNV(PK_sCMNDnv)
 
 alter table tblCTPhieuXuat
 add 
@@ -229,14 +243,14 @@ add
 	constraint FK_ND_CTND foreign key (PK_sCMND) references tblNguoiDung(PK_sCMND)
 
 alter table tblBanGiao
-add constraint FK_CTNV_BG foreign key (FK_sCMNDnv) references tblCTNV(PK_sCMNDnv),
+add constraint FK_CTNV_BG foreign key (FK_iMaNV) references tblCTNV(PK_sCMNDnv),
 	constraint FK_CTND_BG foreign key (FK_sCMND) references tblCTNguoiDung(PK_sCMND)
 
 alter table tblHopDong
 add constraint FK_BG_HD foreign key (PK_iHopDong) references tblBanGiao(PK_iHopDong),
 	constraint FK_CTND_HD foreign key (FK_sCMND) references tblCTNguoiDung(PK_sCMND),
 	constraint FK_CTPX_HD foreign key (FK_iPhieuX) references tblCTPhieuXuat(PK_iPhieuX),
-	constraint FK_CTNV_HD foreign key (FK_sCMNDnv) references tblCTNV(PK_sCMNDnv),
+	constraint FK_CTNV_HD foreign key (FK_iMaNV) references tblCTNV(PK_sCMNDnv),
 	constraint FK_PT_HD foreign key (FK_iPhuongTien) references tblPhuongTien(PK_iPhuongTien)
 
 alter table tblHopDong
@@ -520,15 +534,15 @@ CREATE proc proc_ThemHopDong
 	@fTongTienDatCoc float,
 	@fTienThuePT float,
 	@FK_sCMND varchar(12),
-	@FK_sCMNDnv varchar(12),
+	@FK_iMaNV varchar(12),
 	@FK_iPhieuX int
 AS
 BEGIN
 
 	INSERT INTO tblHopDong
-	VALUES(@PK_iHopDong ,@FK_iPhuongTien , @dNgayThue ,@dNgayHenTra ,@fTongTienDatCoc , @fTienThuePT , @FK_sCMND , @FK_sCMNDnv , @FK_iPhieuX)
+	VALUES(@PK_iHopDong ,@FK_iPhuongTien , @dNgayThue ,@dNgayHenTra ,@fTongTienDatCoc , @fTienThuePT , @FK_sCMND , @FK_iMaNV , @FK_iPhieuX)
 END
-
+drop procedure proc_ThemHopDong
 select * from tblHopDong
 
 CREATE proc proc_SuaHopDong
@@ -539,7 +553,7 @@ CREATE proc proc_SuaHopDong
 	@fTongTienDatCoc float,
 	@fTienThuePT float,
 	@FK_sCMND varchar(12),
-	@FK_sCMNDnv varchar(12),
+	@FK_iMaNV varchar(12),
 	@FK_iPhieuX int
 AS
 BEGIN
@@ -552,12 +566,12 @@ BEGIN
 		fTongTienDatCoc = @fTongTienDatCoc,
 		fTienThuePT = @fTienThuePT,
 		FK_sCMND = @FK_sCMND,
-		FK_sCMNDnv =  @FK_sCMNDnv,
+		FK_iMaNV =  @FK_iMaNV,
 		FK_iPhieuX = @FK_iPhieuX
 	WHERE PK_iHopDong=@PK_iHopDong
 END
-
-
+drop procedure proc_SuaHopDong
+drop table tblHopDong
 select * from tblPhuongTien
 select * from tblCTPhuongTien
 select * from tblBanGiao
@@ -573,13 +587,13 @@ CREATE OR ALTER proc proc_ThemBanGiao
 	@fTienThuePT float,
 	@sGhiChu varchar(100),
 	@FK_sCMND varchar(12),
-	@FK_sCMNDnv varchar(12)
+	@FK_iMaNV varchar(12)
 	
 AS
 BEGIN
 
 	INSERT INTO tblBanGiao
-	VALUES(@PK_iHopDong ,@iPhuongTien , @dNgayThue ,@dNgayHenTra ,@fTongTienDatCoc , @fTienThuePT ,@sGhiChu, @FK_sCMND , @FK_sCMNDnv )
+	VALUES(@PK_iHopDong ,@iPhuongTien , @dNgayThue ,@dNgayHenTra ,@fTongTienDatCoc , @fTienThuePT ,@sGhiChu, @FK_sCMND , @FK_iMaNV )
 END
 
 
@@ -594,7 +608,7 @@ CREATE OR ALTER proc proc_SuaBanGiao
 	@fTienThuePT float,
 	@sGhiChu varchar(100),
 	@FK_sCMND varchar(12),
-	@FK_sCMNDnv varchar(12)
+	@FK_iMaNV varchar(12)
 AS
 BEGIN
 
@@ -606,7 +620,7 @@ BEGIN
 		fTongTienDatCoc = @fTongTienDatCoc,
 		fTongTienThuePT = @fTienThuePT,
 		FK_sCMND = @FK_sCMND,
-		FK_sCMNDnv =  @FK_sCMNDnv,
+		FK_iMaNV =  @FK_iMaNV,
 		sGhiChu = @sGhiChu
 	WHERE PK_iHopDong=@PK_iHopDong
 END
@@ -615,7 +629,7 @@ END
 /***/
 select * from tblPhieuNhap
 select * from tblCTPhieuNhap
---SELECT tblPhieuNhap.PK_iPhieuN, tblPhieuNhap.iTTrongTai,tblPhieuNhap.fTongGiaN,tblPhieuNhap.FK_iNCC,tblPhieuNhap.FK_sCMNDnv,tblPhieuNhap.FK_iPhieuThu,
+--SELECT tblPhieuNhap.PK_iPhieuN, tblPhieuNhap.iTTrongTai,tblPhieuNhap.fTongGiaN,tblPhieuNhap.FK_iNCC,tblPhieuNhap.FK_iMaNV,tblPhieuNhap.FK_iPhieuThu,
 --			tblCTPhieuNhap.iSoLuongN,tblNCC.fDonGiaN,tblCTPhieuNhap.FK_iLoaiPT,
 --			tblNCC.sPhuongTienN,tblNCC.sHangSanXuat,
 --			tblLoaiPhuongTien.sLoaiPT,tblLoaiPhuongTien.sPhanKhoi
@@ -623,7 +637,7 @@ select * from tblCTPhieuNhap
 --	on tblCTPhieuNhap.PK_iPhieuN=tblCTPhieuNhap.PK_iPhieuN) inner join tblNCC
 --	on tblPhieuNhap.FK_iNCC=tblNCC.PK_iNCC)inner join tblLoaiPhuongTien
 --	on tblCTPhieuNhap.FK_iLoaiPT = tblLoaiPhuongTien.PK_iLoaiPT
---	group by tblPhieuNhap.PK_iPhieuN,tblPhieuNhap.iTTrongTai,tblPhieuNhap.fTongGiaN,tblPhieuNhap.FK_iNCC,tblPhieuNhap.FK_sCMNDnv,tblPhieuNhap.FK_iPhieuThu,tblCTPhieuNhap.iSoLuongN,tblNCC.fDonGiaN,tblCTPhieuNhap.FK_iLoaiPT,
+--	group by tblPhieuNhap.PK_iPhieuN,tblPhieuNhap.iTTrongTai,tblPhieuNhap.fTongGiaN,tblPhieuNhap.FK_iNCC,tblPhieuNhap.FK_iMaNV,tblPhieuNhap.FK_iPhieuThu,tblCTPhieuNhap.iSoLuongN,tblNCC.fDonGiaN,tblCTPhieuNhap.FK_iLoaiPT,
 --			tblNCC.sPhuongTienN,tblNCC.sHangSanXuat,
 --			tblLoaiPhuongTien.sLoaiPT,tblLoaiPhuongTien.sPhanKhoi
 
@@ -634,7 +648,7 @@ GO
 create view vv_PhieuNhap
 as
 	SELECT tblPhieuNhap.PK_iPhieuN, tblPhieuNhap.iTTrongTai, tblPhieuNhap.iTongSLN,tblPhieuNhap.fTongGiaN,tblPhieuNhap.FK_iNCC,
-			tblPhieuNhap.FK_sCMNDnv,tblPhieuNhap.FK_iPhieuThu,
+			tblPhieuNhap.FK_iMaNV,tblPhieuNhap.FK_iPhieuThu,
 			tblCTPhieuNhap.iSoLuongN,tblCTPhieuNhap.FK_iLoaiPT
 			
 	FROM tblPhieuNhap inner join tblCTPhieuNhap
@@ -646,13 +660,13 @@ create or alter proc sp_PhieuNhap
 as
 begin
 	SELECT tblPhieuNhap.PK_iPhieuN, tblPhieuNhap.iTTrongTai,tblPhieuNhap.fTongGiaN,tblPhieuNhap.FK_iNCC,
-			tblPhieuNhap.FK_sCMNDnv,tblPhieuNhap.FK_iPhieuThu,
+			tblPhieuNhap.FK_iMaNV,tblPhieuNhap.FK_iPhieuThu,
 			tblCTPhieuNhap.iSoLuongN,tblCTPhieuNhap.FK_iLoaiPT
 			
 	FROM tblPhieuNhap inner join tblCTPhieuNhap
 	on tblCTPhieuNhap.PK_iPhieuN=tblCTPhieuNhap.PK_iPhieuN
 	group by tblPhieuNhap.PK_iPhieuN,tblPhieuNhap.iTTrongTai,tblPhieuNhap.fTongGiaN,tblPhieuNhap.FK_iNCC,
-			tblPhieuNhap.FK_sCMNDnv,tblPhieuNhap.FK_iPhieuThu,tblCTPhieuNhap.iSoLuongN,tblCTPhieuNhap.FK_iLoaiPT
+			tblPhieuNhap.FK_iMaNV,tblPhieuNhap.FK_iPhieuThu,tblCTPhieuNhap.iSoLuongN,tblCTPhieuNhap.FK_iLoaiPT
 end
 Delete from tblCTPhieuThu where PK_iPhieuN = @iMaPhieuN" +
                         "Delete from tblPhieuThu where PK_iPhieuN=@iMaPhieuN 
@@ -754,7 +768,7 @@ BEGIN
 	iTongSLN=@iTongSLN ,
 	fTongGiaN=@iTongGiaN ,
 	FK_iNCC=@iNCC,
-	FK_sCMNDnv=@sCMND,
+	FK_iMaNV=@sCMND,
 	FK_iPhieuThu=@iPhieuThu
 	where PK_iPhieuN=@iPhieuN
 

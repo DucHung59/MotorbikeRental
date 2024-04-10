@@ -538,6 +538,7 @@ namespace MotorbikeRental.QuanLyKhachHang
             this.dgvKH.Location = new System.Drawing.Point(22, 61);
             this.dgvKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvKH.Name = "dgvKH";
+            this.dgvKH.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

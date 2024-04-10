@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MotorbikeRental.DataAccessLayer
 {
-    internal class hopDongDAL
+    internal class hoaDonDAL
     {
         string constr = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
         public DataTable findAll()

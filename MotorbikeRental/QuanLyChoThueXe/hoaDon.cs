@@ -13,12 +13,12 @@ using System.Windows.Forms;
 
 namespace MotorbikeRental.QuanLyChoThueXe
 {
-    public partial class hopDong : Form
+    public partial class hoaDon : Form
     {
 
-        hopDongBLL hopDongBLL = new hopDongBLL();
+        hoaDonBLL hopDongBLL = new hoaDonBLL();
         string constr = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
-        public hopDong()
+        public hoaDon()
         {
             InitializeComponent();
         }

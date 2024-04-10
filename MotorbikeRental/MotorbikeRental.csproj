@@ -64,7 +64,7 @@
   <ItemGroup>
     <Compile Include="BusinessLogicLayer\anhBLL.cs" />
     <Compile Include="BusinessLogicLayer\banGiaoBLL.cs" />
-    <Compile Include="BusinessLogicLayer\hopDongBLL.cs" />
+    <Compile Include="BusinessLogicLayer\hoaDonBLL.cs" />
     <Compile Include="BusinessLogicLayer\khachHangBLL.cs" />
     <Compile Include="BusinessLogicLayer\khoBLL.cs" />
     <Compile Include="BusinessLogicLayer\nhaCungCapBLL.cs" />
@@ -93,7 +93,7 @@
     </Compile>
     <Compile Include="DataAccessLayer\anhDAL.cs" />
     <Compile Include="DataAccessLayer\banGiaoDAL.cs" />
-    <Compile Include="DataAccessLayer\hopDongDAL.cs" />
+    <Compile Include="DataAccessLayer\hoaDonDAL.cs" />
     <Compile Include="DataAccessLayer\khachhangDAL.cs" />
     <Compile Include="DataAccessLayer\khoDAL.cs" />
     <Compile Include="DataAccessLayer\nhaCungCapDAL.cs" />
@@ -116,17 +116,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLyChoThueXe\banGiao.cs">
+    <Compile Include="QuanLyChoThueXe\hoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLyChoThueXe\banGiao.Designer.cs">
-      <DependentUpon>banGiao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyChoThueXe\hopDong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyChoThueXe\hopDong.Designer.cs">
-      <DependentUpon>hopDong.cs</DependentUpon>
+    <Compile Include="QuanLyChoThueXe\hoaDon.Designer.cs">
+      <DependentUpon>hoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLyChoThueXe\phieuNhapKho.cs">
       <SubType>Form</SubType>
@@ -139,12 +133,6 @@
     </Compile>
     <Compile Include="QuanLyChoThueXe\phieuXuatKho.Designer.cs">
       <DependentUpon>phieuXuatKho.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyKhachHang\danhGia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyKhachHang\danhGia.Designer.cs">
-      <DependentUpon>danhGia.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLyKhachHang\khachHang.cs">
       <SubType>Form</SubType>
@@ -241,20 +229,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="QuanLyChoThueXe\banGiao.resx">
-      <DependentUpon>banGiao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyChoThueXe\hopDong.resx">
-      <DependentUpon>hopDong.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLyChoThueXe\hoaDon.resx">
+      <DependentUpon>hoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyChoThueXe\phieuNhapKho.resx">
       <DependentUpon>phieuNhapKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyChoThueXe\phieuXuatKho.resx">
       <DependentUpon>phieuXuatKho.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyKhachHang\danhGia.resx">
-      <DependentUpon>danhGia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyKhachHang\khachHang.resx">
       <DependentUpon>khachHang.cs</DependentUpon>
@@ -293,6 +275,7 @@
     <EmbeddedResource Include="trangChu.resx">
       <DependentUpon>trangChu.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\MotorbikeRental.QuanLyKhachHang.khachHang.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

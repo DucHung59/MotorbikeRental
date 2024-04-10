@@ -31,6 +31,8 @@ namespace MotorbikeRental.QuanLyKhachHang
 
         private void dgvKH_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int r = dgvKH.CurrentRow.Index;
+            tbHoTen.Text = dgvKH.Rows[r].Cells[0].Value.ToString();
 
         }
     }
