@@ -878,3 +878,52 @@ Begin
 
 end
 /*Chạy file backups vì thêm/ sửa/ xóa nhiều cột và dl không có trong SQL*/
+
+--vv và sp Phiếu Nhập
+create view vv_PhieuThu 
+as
+select * from tblPhieuNhap
+
+create proc sp_ThemPhieuNhap
+	(@PK_iPhieuN int,
+	  @iTTrongTai int,
+	  @iTongSLN int,
+	  @fTongGiaN float,
+	  @FK_iNCC float,
+	  @FK_sCMNDnv varchar(12),
+	  @FK_iPhieuX int)	
+as
+begin
+	insert into tblPhieuNhap values (@PK_iPhieuN, @iTTrongTai, @iTongSLN, @fTongGiaN, @FK_iNCC, @FK_sCMNDnv, @FK_iPhieuX)
+end
+
+create proc sp_XoaPhieuNhap
+	@PK_iPhieuN int
+as
+begin
+	delete from tblPhieuNhap
+	where PK_iPhieuN = @PK_iPhieuN
+end
+
+create proc sp_SuaPhieuNhap
+	(@PK_iPhieuN int,
+	  @iTTrongTai int,
+	  @iTongSLN int,
+	  @fTongGiaN float,
+	  @FK_iNCC float,
+	  @FK_sCMNDnv varchar(12),
+	  @FK_iPhieuX int)	
+as
+begin
+	update tblPhieuNhap
+	set
+	iTTrongTai = @iTTrongTai, 
+	iTongSLN = @iTongSLN,
+	fTongGiaN = @fTongGiaN,
+	FK_iNCC = @FK_iNCC,
+	FK_sCMNDnv = @FK_sCMNDnv,
+	FK_iPhieuThu = @FK_iPhieuX
+	where PK_iPhieuN = @PK_iPhieuN
+end
+
+/*Chạy file backups vì thêm/ sửa/ xóa nhiều cột và dl không có trong SQL*/
